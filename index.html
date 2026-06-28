@@ -1,3 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mihir Jadhav | Data Analyst Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#f8fafc;color:#0f172a;line-height:1.7}
+    .container{width:88%;max-width:1180px;margin:auto}
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid #e2e8f0;
+    }
+
+    nav{
+      height:80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{font-size:26px;font-weight:900;color:#1e40af}
+
+    nav ul{
+      display:flex;
+      gap:34px;
+      list-style:none;
+    }
+
+    nav a{
+      color:#334155;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    nav a:hover{color:#2563eb}
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+      background:
+      radial-gradient(circle at 12% 20%,rgba(37,99,235,.18),transparent 30%),
+      radial-gradient(circle at 88% 75%,rgba(6,182,212,.20),transparent 32%),
+      linear-gradient(135deg,#f8fafc,#eef2ff);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .role{
+      display:inline-block;
+      color:#1e40af;
+      background:#dbeafe;
+      padding:10px 20px;
+      border-radius:40px;
+      font-weight:800;
+      margin-bottom:22px;
+    }
+
+    h1{
+      font-size:68px;
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    h1 span{
+      background:linear-gradient(90deg,#2563eb,#06b6d4);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .headline{
+      font-size:30px;
+      color:#1e40af;
+      font-weight:900;
+      margin-bottom:22px;
+    }
+
+    .hero-text p{
+      color:#475569;
+      font-size:18px;
+      max-width:720px;
+      margin-bottom:34px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:34px;
+    }
+
+    .btn{
+      padding:14px 26px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#2563eb,#06b6d4);
+      color:white;
+      box-shadow:0 16px 34px rgba(37,99,235,.25);
+    }
+
+    .btn-outline{
+      background:white;
+      color:#1e40af;
+      border:2px solid #2563eb;
+    }
+
+    .btn:hover{transform:translateY(-5px)}
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      max-width:620px;
+    }
+
+    .stat{
+      background:white;
+      padding:20px;
+      border-radius:20px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 12px 30px rgba(15,23,42,.08);
+    }
+
+    .stat h3{color:#2563eb;font-size:26px}
+
+    .stat p{
+      margin:0;
+      font-size:14px;
+      color:#64748b;
+      font-weight:700;
+    }
+
+    .photo-card{
+      max-width:520px;
+      margin:auto;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.9);
+      border-radius:36px;
+      padding:50px 40px;
+      text-align:center;
+      backdrop-filter:blur(20px);
+      box-shadow:0 35px 80px rgba(15,23,42,.15);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .photo-card::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:#bfdbfe;
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+    }
+
+    .photo-card::after{
+      content:"";
+      position:absolute;
+      width:140px;
+      height:140px;
+      background:#cffafe;
+      border-radius:50%;
+      bottom:-50px;
+      left:-50px;
+    }
+
+    .photo-content{position:relative;z-index:2}
+
+    .profile-photo{
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      margin:0 auto 25px;
+      border:8px solid #fff;
+      box-shadow:
+        0 20px 45px rgba(37,99,235,.25),
+        0 0 0 12px rgba(37,99,235,.10);
+      transition:.4s;
+    }
+
+    .profile-photo:hover{transform:scale(1.05)}
+
+    .photo-card h3{
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .photo-card p{
+      color:#64748b;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .socials a{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:#eff6ff;
+      color:#2563eb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-size:20px;
+      transition:.3s;
+    }
+
+    .socials a:hover{
+      background:#2563eb;
+      color:white;
+      transform:translateY(-5px);
+    }
+
+    section{padding:92px 0}
+
+    .section-title{
+      text-align:center;
+      margin-bottom:52px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{color:#64748b}
+
+    .about-box{
+      background:white;
+      padding:44px;
+      border-radius:30px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 20px 45px rgba(15,23,42,.08);
+      max-width:980px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .about-box p{
+      color:#475569;
+      font-size:18px;
+    }
+
+    .skills-new{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:24px;
+    }
+
+    .skill-box{
+      background:white;
+      padding:34px 26px;
+      border-radius:28px;
+      text-align:center;
+      border:1px solid #e2e8f0;
+      box-shadow:0 18px 42px rgba(15,23,42,.08);
+      transition:.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .skill-box::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:linear-gradient(135deg,#2563eb,#06b6d4);
+      opacity:.10;
+      border-radius:50%;
+      top:-45px;
+      right:-45px;
+    }
+
+    .skill-box:hover{
+      transform:translateY(-10px);
+      box-shadow:0 28px 65px rgba(15,23,42,.14);
+      border-color:#2563eb;
+    }
+
+    .skill-box i{
+      width:70px;
+      height:70px;
+      margin:0 auto 20px;
+      border-radius:22px;
+      background:linear-gradient(135deg,#2563eb,#06b6d4);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      box-shadow:0 16px 30px rgba(37,99,235,.25);
+    }
+
+    .skill-box h3{
+      font-size:22px;
+      color:#0f172a;
+      margin-bottom:8px;
+    }
+
+    .skill-box span{
+      display:inline-block;
+      padding:8px 16px;
+      border-radius:30px;
+      background:#eff6ff;
+      color:#2563eb;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:26px;
+    }
+
+    .card{
+      background:white;
+      padding:32px;
+      border-radius:28px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 18px 42px rgba(15,23,42,.08);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 30px 65px rgba(15,23,42,.14);
+    }
+
+    .card i{
+      width:60px;
+      height:60px;
+      background:#dbeafe;
+      color:#2563eb;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:#475569;
+      font-size:15.8px;
+    }
+
+    .project-card{border-top:6px solid #2563eb}
+    .offer-card{border-top:6px solid #06b6d4}
+
+    .why{
+      background:#0f172a;
+      color:white;
+    }
+
+    .why .section-title p{color:#cbd5e1}
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+    }
+
+    .why-box{
+      background:#1e293b;
+      padding:28px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .why-box i{
+      color:#38bdf8;
+      font-size:28px;
+      margin-bottom:14px;
+    }
+
+    .why-box p{
+      color:#cbd5e1;
+      font-size:15px;
+    }
+
+    .contact{
+      background:linear-gradient(135deg,#1e40af,#0f172a);
+      color:white;
+    }
+
+    .contact .section-title p{color:#cbd5e1}
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+    }
+
+    .contact-box{
+      background:rgba(255,255,255,.1);
+      padding:34px;
+      border-radius:26px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.15);
+      transition:.3s;
+    }
+
+    .contact-box:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,.18);
+    }
+
+    .contact-box i{
+      font-size:34px;
+      color:#67e8f9;
+      margin-bottom:15px;
+    }
+
+    .contact-box a{
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      word-break:break-word;
+    }
+
+    footer{
+      background:#020617;
+      color:#cbd5e1;
+      text-align:center;
+      padding:24px;
+      font-size:14px;
+    }
+
+    @media(max-width:850px){
+      nav ul{display:none}
+      .hero-grid{grid-template-columns:1fr;text-align:center}
+      h1{font-size:44px}
+      .headline{font-size:24px}
+      .hero-text p{margin-left:auto;margin-right:auto}
+      .buttons{justify-content:center}
+      .hero-stats{grid-template-columns:1fr;margin:auto}
+      .profile-photo{width:220px;height:220px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Mihir Jadhav</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#why">Why Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="role">Data Analyst</div>
+
+      <h1>Hello, I’m <span>Mihir Jadhav</span></h1>
+
+      <div class="headline">
+        Transforming Data into Strategic Business Value.
+      </div>
+
+      <p>
+        From raw data to real business impact—designing interactive dashboards,
+        uncovering actionable insights, and delivering data-driven solutions that
+        empower organizations to make smarter decisions, optimize performance,
+        and accelerate sustainable growth.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-folder-open"></i> View Projects
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>3+</h3>
+          <p>Analytics Projects</p>
+        </div>
+        <div class="stat">
+          <h3>8+</h3>
+          <p>Tools & Methods</p>
+        </div>
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Business Focused</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-content">
+        <img src="./profile.jpg" alt="Mihir Jadhav" class="profile-photo">
+
+        <h3>Mihir Jadhav</h3>
+        <p>SQL • Power BI • Python • Excel</p>
+
+        <div class="socials">
+          <a href="mailto:mihirjdhav032002@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/mihir-jadhav-304b4040b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/MihirJ2002" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Professional summary</p>
+    </div>
+
+    <div class="about-box">
+      <p>
+        I am a Data Analyst enthusiast with practical experience in SQL analytics,
+        data visualization, dashboard development and business reporting. I enjoy
+        converting complex datasets into clear insights that help organizations
+        improve performance, operations and strategic decision-making.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
   <div class="container">
     <div class="section-title">
@@ -44,3 +626,132 @@
     </div>
   </div>
 </section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <p>Analytics projects focused on measurable business impact</p>
+    </div>
+
+    <div class="cards">
+      <div class="card project-card">
+        <i class="fa-solid fa-plane"></i>
+        <h3>Aerox Aviation SQL Analytics</h3>
+        <p>Designed a normalized airline database and analyzed passengers, bookings, routes, crew, revenue and feedback using SQL.</p>
+      </div>
+
+      <div class="card project-card">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <h3>Fundraising Analytics Dashboard</h3>
+        <p>Built an interactive dashboard to track campaign performance, donor behavior, success rate, RCA and SWOT-based recommendations.</p>
+      </div>
+
+      <div class="card project-card">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>L&D Performance Dashboard</h3>
+        <p>Created a Power BI dashboard to evaluate training effectiveness, ROI, engagement score and department-wise performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>What I Can Do</h2>
+      <p>How I add value through analytics</p>
+    </div>
+
+    <div class="cards">
+      <div class="card offer-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Data Analysis</h3>
+        <p>Clean, transform and analyze data to identify patterns, trends and opportunities.</p>
+      </div>
+
+      <div class="card offer-card">
+        <i class="fa-solid fa-chart-column"></i>
+        <h3>Dashboard Development</h3>
+        <p>Build professional dashboards using Power BI, Tableau, Excel and Looker Studio.</p>
+      </div>
+
+      <div class="card offer-card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Business Insights</h3>
+        <p>Convert KPIs, RCA, SWOT and business requirements into useful recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Work With Me?</h2>
+      <p>Business-focused analytics mindset</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Dashboard Thinking</h3>
+        <p>I design dashboards that are simple, useful and decision-focused.</p>
+      </div>
+
+      <div class="why-box">
+        <i class="fa-solid fa-database"></i>
+        <h3>Strong SQL Foundation</h3>
+        <p>I can structure, query and analyze data for meaningful reporting.</p>
+      </div>
+
+      <div class="why-box">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Business Understanding</h3>
+        <p>I connect KPIs, RCA and SWOT with real business problems.</p>
+      </div>
+
+      <div class="why-box">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>Growth Mindset</h3>
+        <p>I continuously improve my technical and analytical skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Connect with me for data analyst opportunities</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-box">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:mihirjdhav032002@gmail.com">mihirjdhav032002@gmail.com</a>
+      </div>
+
+      <div class="contact-box">
+        <i class="fa-brands fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/mihir-jadhav-304b4040b/" target="_blank">mihir-jadhav-304b4040b</a>
+      </div>
+
+      <div class="contact-box">
+        <i class="fa-brands fa-github"></i>
+        <h3>GitHub</h3>
+        <a href="https://github.com/MihirJ2002" target="_blank">github.com/MihirJ2002</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Mihir Jadhav | Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
