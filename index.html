@@ -28,17 +28,9 @@
       align-items:center;
     }
 
-    .logo{
-      font-size:26px;
-      font-weight:900;
-      color:#1e40af;
-    }
+    .logo{font-size:26px;font-weight:900;color:#1e40af}
 
-    nav ul{
-      display:flex;
-      gap:34px;
-      list-style:none;
-    }
+    nav ul{display:flex;gap:34px;list-style:none}
 
     nav a{
       color:#334155;
@@ -150,10 +142,7 @@
       box-shadow:0 12px 30px rgba(15,23,42,.08);
     }
 
-    .stat h3{
-      color:#2563eb;
-      font-size:26px;
-    }
+    .stat h3{color:#2563eb;font-size:26px}
 
     .stat p{
       margin:0;
@@ -198,41 +187,24 @@
       left:-50px;
     }
 
-    .photo-content{
-      position:relative;
-      z-index:2;
-    }
+    .photo-content{position:relative;z-index:2}
 
-      /* ===========================
-   PROFILE PHOTO
-=========================== */
-
-.profile-photo{
-    width:280px;
-    height:280px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-    object-position:center top;
-
-    display:block;
-    margin:0 auto 25px;
-
-    border:8px solid #fff;
-
-    box-shadow:
+    .profile-photo{
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      margin:0 auto 25px;
+      border:8px solid #fff;
+      box-shadow:
         0 20px 45px rgba(37,99,235,.25),
         0 0 0 12px rgba(37,99,235,.10);
-
-    transition:.4s;
-}
-
-.profile-photo:hover{
-    transform:scale(1.05);
-}
-}
+      transition:.4s;
     }
+
+    .profile-photo:hover{transform:scale(1.05)}
 
     .photo-card h3{
       font-size:30px;
@@ -273,19 +245,14 @@
 
     section{padding:92px 0}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:52px;
-    }
+    .section-title{text-align:center;margin-bottom:52px}
 
     .section-title h2{
       font-size:42px;
       margin-bottom:10px;
     }
 
-    .section-title p{
-      color:#64748b;
-    }
+    .section-title p{color:#64748b}
 
     .about-box{
       background:white;
@@ -468,7 +435,7 @@
       .hero-text p{margin-left:auto;margin-right:auto}
       .buttons{justify-content:center}
       .hero-stats{grid-template-columns:1fr;margin:auto}
-      .photo-card img{width:220px;height:220px}
+      .profile-photo{width:220px;height:220px}
     }
   </style>
 </head>
@@ -537,7 +504,7 @@
 
     <div class="photo-card">
       <div class="photo-content">
-        <img src="./profile.jpg" alt="Mihir Jadhav">
+        <img src="./profile.jpg" alt="Mihir Jadhav" class="profile-photo">
 
         <h3>Mihir Jadhav</h3>
         <p>SQL • Power BI • Python • Excel</p>
