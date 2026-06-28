@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mihir Jadhav | Data Analyst Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -13,7 +13,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Inter',sans-serif;
+      font-family:'Manrope', sans-serif;
     }
 
     html{
@@ -21,8 +21,8 @@
     }
 
     body{
-      background:#fdfaf3;
-      color:#102a43;
+      background:#f7f4ef;
+      color:#1c1c1c;
       line-height:1.7;
     }
 
@@ -36,173 +36,224 @@
       position:fixed;
       top:0;
       width:100%;
-      background:rgba(253,250,243,0.92);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid #e8dfcf;
-      z-index:1000;
+      z-index:999;
+      background:rgba(247,244,239,0.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid #e3ddd2;
     }
 
     nav{
+      height:76px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:18px 0;
     }
 
     .logo{
       font-size:24px;
       font-weight:800;
-      color:#0f766e;
-      letter-spacing:-1px;
+      color:#0f3d3e;
     }
 
     nav ul{
       display:flex;
-      gap:28px;
+      gap:30px;
       list-style:none;
     }
 
-    nav a{
+    nav ul li a{
       text-decoration:none;
-      color:#334e68;
-      font-weight:600;
+      color:#333;
+      font-weight:700;
       font-size:15px;
     }
 
-    nav a:hover{
+    nav ul li a:hover{
       color:#0f766e;
     }
 
+    .nav-btn{
+      background:#0f3d3e;
+      color:white;
+      padding:11px 20px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:800;
+    }
+
     .hero{
-      padding:150px 0 90px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:90px;
       background:
-        radial-gradient(circle at 15% 20%,rgba(15,118,110,0.16),transparent 28%),
-        radial-gradient(circle at 85% 80%,rgba(245,158,11,0.18),transparent 30%);
+        radial-gradient(circle at top left, rgba(15,118,110,0.20), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(245,158,11,0.22), transparent 32%);
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:55px;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:60px;
       align-items:center;
     }
 
     .tag{
-      display:inline-block;
-      padding:9px 18px;
-      border-radius:50px;
-      background:#ccfbf1;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:white;
       color:#0f766e;
-      font-weight:700;
-      font-size:14px;
-      margin-bottom:22px;
+      padding:10px 18px;
+      border-radius:30px;
+      font-weight:800;
+      box-shadow:0 10px 25px rgba(0,0,0,0.07);
+      margin-bottom:24px;
     }
 
     h1{
-      font-size:58px;
+      font-size:64px;
       line-height:1.05;
-      letter-spacing:-2px;
-      margin-bottom:18px;
-      color:#102a43;
+      letter-spacing:-2.5px;
+      margin-bottom:20px;
+      color:#0f3d3e;
     }
 
     h1 span{
-      color:#0f766e;
+      color:#d97706;
     }
 
     .subtitle{
-      font-size:22px;
-      color:#d97706;
-      font-weight:700;
-      margin-bottom:18px;
+      font-size:23px;
+      font-weight:800;
+      color:#0f766e;
+      margin-bottom:20px;
     }
 
     .hero p{
       font-size:18px;
-      color:#52606d;
-      max-width:650px;
+      color:#555;
+      max-width:640px;
       margin-bottom:32px;
     }
 
     .buttons{
       display:flex;
-      flex-wrap:wrap;
       gap:16px;
+      flex-wrap:wrap;
     }
 
     .btn{
-      padding:14px 26px;
-      border-radius:12px;
+      padding:14px 24px;
+      border-radius:14px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       display:inline-flex;
       align-items:center;
       gap:10px;
-      transition:0.3s;
+      transition:0.3s ease;
     }
 
     .btn-primary{
-      background:#0f766e;
+      background:#0f3d3e;
       color:white;
-      box-shadow:0 12px 28px rgba(15,118,110,0.25);
+      box-shadow:0 15px 30px rgba(15,61,62,0.25);
     }
 
-    .btn-outline{
+    .btn-secondary{
       background:white;
-      color:#0f766e;
-      border:2px solid #0f766e;
+      color:#0f3d3e;
+      border:2px solid #0f3d3e;
     }
 
     .btn:hover{
-      transform:translateY(-4px);
+      transform:translateY(-5px);
     }
 
     .profile-card{
-      background:white;
-      border:1px solid #e8dfcf;
-      border-radius:28px;
-      padding:35px;
-      box-shadow:0 24px 55px rgba(16,42,67,0.12);
-      text-align:center;
+      background:#ffffff;
+      padding:34px;
+      border-radius:34px;
+      box-shadow:0 30px 70px rgba(0,0,0,0.13);
       position:relative;
+      overflow:hidden;
     }
 
     .profile-card::before{
       content:"";
       position:absolute;
-      inset:16px;
-      border:2px dashed #99f6e4;
-      border-radius:22px;
-      z-index:0;
+      width:180px;
+      height:180px;
+      background:#ccfbf1;
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+    }
+
+    .profile-card::after{
+      content:"";
+      position:absolute;
+      width:140px;
+      height:140px;
+      background:#fde68a;
+      border-radius:50%;
+      bottom:-50px;
+      left:-50px;
     }
 
     .profile-content{
       position:relative;
-      z-index:1;
+      z-index:2;
+      text-align:center;
     }
 
     .avatar{
       width:180px;
       height:180px;
-      border-radius:30px;
-      margin:0 auto 24px;
-      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      margin:auto;
+      border-radius:50%;
+      background:linear-gradient(135deg,#0f766e,#0f3d3e);
       display:flex;
       align-items:center;
       justify-content:center;
       color:white;
       font-size:70px;
-      transform:rotate(-3deg);
+      margin-bottom:22px;
+      border:8px solid #f7f4ef;
     }
 
-    .profile-card h3{
-      font-size:26px;
-      margin-bottom:8px;
+    .profile-content h3{
+      font-size:28px;
+      color:#0f3d3e;
     }
 
-    .profile-card p{
-      color:#52606d;
-      font-weight:500;
+    .profile-content p{
+      color:#555;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .mini-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .stat{
+      background:#f7f4ef;
+      padding:14px;
+      border-radius:16px;
+    }
+
+    .stat h4{
+      color:#0f766e;
+      font-size:20px;
+    }
+
+    .stat small{
+      color:#555;
+      font-weight:700;
     }
 
     section{
@@ -215,30 +266,30 @@
     }
 
     .section-title h2{
-      font-size:38px;
-      color:#102a43;
-      margin-bottom:10px;
+      font-size:42px;
+      color:#0f3d3e;
       letter-spacing:-1px;
     }
 
     .section-title p{
-      color:#627d98;
+      color:#666;
+      margin-top:8px;
     }
 
     .about-box{
       background:white;
-      border-radius:24px;
-      padding:35px;
-      border:1px solid #e8dfcf;
-      box-shadow:0 16px 36px rgba(16,42,67,0.08);
-      max-width:900px;
+      padding:40px;
+      border-radius:28px;
+      box-shadow:0 20px 45px rgba(0,0,0,0.08);
+      max-width:950px;
       margin:auto;
       text-align:center;
+      border:1px solid #ebe4d8;
     }
 
     .about-box p{
-      color:#52606d;
-      font-size:17px;
+      font-size:18px;
+      color:#555;
     }
 
     .skills{
@@ -250,12 +301,12 @@
 
     .skill{
       background:white;
-      border:1px solid #cbd5e1;
-      color:#0f766e;
-      padding:12px 22px;
-      border-radius:50px;
-      font-weight:700;
-      box-shadow:0 8px 20px rgba(16,42,67,0.06);
+      color:#0f3d3e;
+      border:1px solid #d9d1c4;
+      padding:13px 22px;
+      border-radius:40px;
+      font-weight:800;
+      box-shadow:0 10px 25px rgba(0,0,0,0.06);
     }
 
     .cards{
@@ -266,45 +317,91 @@
 
     .card{
       background:white;
-      border:1px solid #e8dfcf;
-      padding:30px;
-      border-radius:24px;
-      box-shadow:0 14px 34px rgba(16,42,67,0.08);
-      transition:0.3s;
+      padding:32px;
+      border-radius:28px;
+      box-shadow:0 18px 42px rgba(0,0,0,0.08);
+      border:1px solid #ebe4d8;
+      transition:0.3s ease;
     }
 
     .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 24px 50px rgba(16,42,67,0.13);
+      transform:translateY(-10px);
+      box-shadow:0 28px 60px rgba(0,0,0,0.13);
     }
 
     .card i{
-      font-size:34px;
+      width:58px;
+      height:58px;
+      background:#ccfbf1;
       color:#0f766e;
-      margin-bottom:18px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin-bottom:20px;
     }
 
     .card h3{
-      font-size:21px;
+      font-size:22px;
+      color:#0f3d3e;
       margin-bottom:12px;
-      color:#102a43;
     }
 
     .card p{
-      color:#52606d;
-      font-size:15.5px;
+      color:#555;
+      font-size:15.8px;
     }
 
     .project-card{
-      border-top:5px solid #0f766e;
+      border-top:6px solid #0f766e;
     }
 
     .offer-card{
-      border-top:5px solid #d97706;
+      border-top:6px solid #d97706;
     }
 
     .offer-card i{
+      background:#fef3c7;
       color:#d97706;
+    }
+
+    .recruiter-box{
+      background:#0f3d3e;
+      color:white;
+      border-radius:34px;
+      padding:55px;
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:30px;
+      align-items:center;
+      box-shadow:0 25px 60px rgba(15,61,62,0.25);
+    }
+
+    .recruiter-box h2{
+      font-size:38px;
+      margin-bottom:14px;
+    }
+
+    .recruiter-box p{
+      color:#d1fae5;
+      font-size:17px;
+    }
+
+    .recruiter-actions{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .recruiter-actions a{
+      background:white;
+      color:#0f3d3e;
+      text-decoration:none;
+      padding:15px 22px;
+      border-radius:14px;
+      font-weight:800;
+      text-align:center;
     }
 
     .contact{
@@ -317,7 +414,7 @@
     }
 
     .contact .section-title p{
-      color:#bcccdc;
+      color:#cbd5e1;
     }
 
     .contact-grid{
@@ -328,16 +425,15 @@
 
     .contact-box{
       background:#1f3a5f;
-      padding:30px;
-      border-radius:22px;
+      padding:32px;
+      border-radius:24px;
       text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
       transition:0.3s;
     }
 
     .contact-box:hover{
-      transform:translateY(-6px);
       background:#243b53;
+      transform:translateY(-8px);
     }
 
     .contact-box i{
@@ -346,45 +442,42 @@
       margin-bottom:15px;
     }
 
-    .contact-box h3{
-      margin-bottom:8px;
-    }
-
     .contact-box a{
       color:white;
       text-decoration:none;
       word-break:break-word;
-      font-size:15px;
+      font-weight:700;
     }
 
     footer{
       background:#061526;
       color:#bcccdc;
       text-align:center;
-      padding:24px;
+      padding:25px;
       font-size:14px;
     }
 
     @media(max-width:850px){
-      nav ul{
+      nav ul, .nav-btn{
         display:none;
       }
 
-      .hero-grid{
+      .hero-grid,
+      .recruiter-box{
         grid-template-columns:1fr;
         text-align:center;
       }
 
-      .hero p{
-        margin:auto auto 32px;
+      h1{
+        font-size:42px;
       }
 
       .buttons{
         justify-content:center;
       }
 
-      h1{
-        font-size:42px;
+      .mini-stats{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -395,14 +488,16 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">MJ.</div>
+      <div class="logo">Mihir Jadhav</div>
+
       <ul>
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <a href="mailto:mihirjdhav032002@gmail.com" class="nav-btn">Hire Me</a>
     </nav>
   </div>
 </header>
@@ -410,21 +505,27 @@
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <span class="tag">Data Analyst | Business Analyst</span>
-      <h1>Hi, I’m <span>Mihir Jadhav</span></h1>
-      <div class="subtitle">I build dashboards that turn data into decisions.</div>
+      <span class="tag"><i class="fa-solid fa-circle-check"></i> Open to Data Analyst Roles</span>
+
+      <h1>Hi, I’m <span>Mihir</span><br>Data Analyst</h1>
+
+      <div class="subtitle">
+        I build dashboards, reports and insights for better business decisions.
+      </div>
+
       <p>
-        I work with SQL, Python, Excel, Power BI, Tableau and Looker Studio to clean,
-        analyze and visualize data. My focus is creating simple, meaningful and
-        business-ready insights.
+        I’m Mihir Jadhav, a Data Analyst and Business Analyst enthusiast skilled in
+        SQL, Python, Excel, Power BI, Tableau and Looker Studio. I create clean,
+        recruiter-friendly dashboards and business insights using RCA, SWOT, BRD and FRD.
       </p>
 
       <div class="buttons">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fa-solid fa-folder-open"></i> View My Work
+        <a href="mailto:mihirjdhav032002@gmail.com" class="btn btn-primary">
+          <i class="fa-solid fa-envelope"></i> Contact Me
         </a>
-        <a href="https://github.com/MihirJ2002" target="_blank" class="btn btn-outline">
-          <i class="fa-brands fa-github"></i> GitHub
+
+        <a href="#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-folder-open"></i> View Projects
         </a>
       </div>
     </div>
@@ -432,10 +533,26 @@
     <div class="profile-card">
       <div class="profile-content">
         <div class="avatar">
-          <i class="fa-solid fa-chart-simple"></i>
+          <i class="fa-solid fa-chart-line"></i>
         </div>
+
         <h3>Mihir Jadhav</h3>
         <p>SQL • Power BI • Python • Excel</p>
+
+        <div class="mini-stats">
+          <div class="stat">
+            <h4>3+</h4>
+            <small>Projects</small>
+          </div>
+          <div class="stat">
+            <h4>6+</h4>
+            <small>Tools</small>
+          </div>
+          <div class="stat">
+            <h4>100%</h4>
+            <small>Learning</small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -445,15 +562,15 @@
   <div class="container">
     <div class="section-title">
       <h2>About Me</h2>
-      <p>A quick introduction</p>
+      <p>Short professional summary</p>
     </div>
 
     <div class="about-box">
       <p>
-        I am a Data Analyst and Business Analyst enthusiast with practical knowledge
-        of data cleaning, SQL analytics, dashboard development and business reporting.
-        I enjoy converting raw datasets into clear dashboards and insights that support
-        better business decisions.
+        I am a Data Analyst and Business Analyst enthusiast with practical experience
+        in data cleaning, SQL analytics, dashboard creation and business reporting.
+        I enjoy converting raw data into meaningful insights that help businesses
+        improve performance, decision-making and operational efficiency.
       </p>
     </div>
   </div>
@@ -463,12 +580,12 @@
   <div class="container">
     <div class="section-title">
       <h2>Skills</h2>
-      <p>Tools and methods I use</p>
+      <p>My technical and business analytics toolkit</p>
     </div>
 
     <div class="skills">
-      <div class="skill">Python</div>
       <div class="skill">SQL</div>
+      <div class="skill">Python</div>
       <div class="skill">Power BI</div>
       <div class="skill">Tableau</div>
       <div class="skill">Excel</div>
@@ -487,7 +604,7 @@
   <div class="container">
     <div class="section-title">
       <h2>Featured Projects</h2>
-      <p>Analytics work focused on business impact</p>
+      <p>Projects designed to show business impact</p>
     </div>
 
     <div class="cards">
@@ -495,8 +612,8 @@
         <i class="fa-solid fa-plane"></i>
         <h3>Aerox Aviation SQL Analytics</h3>
         <p>
-          Designed a normalized airline database and analyzed bookings, passengers,
-          routes, crew, revenue and customer feedback using SQL.
+          Designed a normalized airline database and analyzed passengers, bookings,
+          routes, crew, revenue and feedback using SQL queries and business logic.
         </p>
       </div>
 
@@ -504,8 +621,8 @@
         <i class="fa-solid fa-hand-holding-dollar"></i>
         <h3>Fundraising Analytics Dashboard</h3>
         <p>
-          Built an interactive dashboard to analyze campaign success, donor behavior,
-          marketing channels, RCA and SWOT insights.
+          Built a dashboard to track fundraising success, donor behavior, campaign
+          performance, RCA and SWOT-based recommendations.
         </p>
       </div>
 
@@ -513,7 +630,7 @@
         <i class="fa-solid fa-user-graduate"></i>
         <h3>L&D Performance Dashboard</h3>
         <p>
-          Created a Power BI dashboard to evaluate employee training effectiveness,
+          Created a Power BI dashboard to measure employee training effectiveness,
           ROI, engagement score and department-wise performance.
         </p>
       </div>
@@ -525,26 +642,60 @@
   <div class="container">
     <div class="section-title">
       <h2>What I Can Do</h2>
-      <p>Simple analytics solutions for business problems</p>
+      <p>How I can add value to a business team</p>
     </div>
 
     <div class="cards">
       <div class="card offer-card">
         <i class="fa-solid fa-database"></i>
         <h3>Data Analysis</h3>
-        <p>Clean, transform and analyze datasets to identify trends and patterns.</p>
+        <p>
+          Clean, transform and analyze datasets to identify trends, issues and opportunities.
+        </p>
       </div>
 
       <div class="card offer-card">
-        <i class="fa-solid fa-chart-line"></i>
+        <i class="fa-solid fa-chart-column"></i>
         <h3>Dashboard Development</h3>
-        <p>Create interactive dashboards using Power BI, Tableau and Looker Studio.</p>
+        <p>
+          Build interactive dashboards using Power BI, Tableau, Excel and Looker Studio.
+        </p>
       </div>
 
       <div class="card offer-card">
         <i class="fa-solid fa-lightbulb"></i>
         <h3>Business Insights</h3>
-        <p>Use KPIs, RCA and SWOT to convert data into practical recommendations.</p>
+        <p>
+          Convert KPIs, RCA, SWOT and business requirements into clear recommendations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="recruiter-box">
+      <div>
+        <h2>Recruiter? Let’s Connect.</h2>
+        <p>
+          I am open to Data Analyst, Business Analyst and MIS Executive opportunities.
+          You can contact me directly through email, LinkedIn or GitHub.
+        </p>
+      </div>
+
+      <div class="recruiter-actions">
+        <a href="mailto:mihirjdhav032002@gmail.com">
+          <i class="fa-solid fa-envelope"></i> Email Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/mihir-jadhav-304b4040b/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+        </a>
+
+        <a href="https://github.com/MihirJ2002" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub Profile
+        </a>
       </div>
     </div>
   </div>
@@ -553,8 +704,8 @@
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-title">
-      <h2>Contact Me</h2>
-      <p>Let’s connect for opportunities and collaborations</p>
+      <h2>Contact</h2>
+      <p>Available for data analytics opportunities</p>
     </div>
 
     <div class="contact-grid">
@@ -568,7 +719,7 @@
         <i class="fa-brands fa-linkedin"></i>
         <h3>LinkedIn</h3>
         <a href="https://www.linkedin.com/in/mihir-jadhav-304b4040b/" target="_blank">
-          linkedin.com/in/mihir-jadhav-304b4040b
+          mihir-jadhav-304b4040b
         </a>
       </div>
 
